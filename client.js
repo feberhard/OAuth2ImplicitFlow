@@ -1,4 +1,11 @@
-// https://netproject1617.azurewebsites.net/
+/*
+ * //==============================================\\
+ * || Project: OAuth 2.0 Implicit Flow Demo        ||
+ * || Author:  Eberhard Felix                      ||
+ * || Date:    06.02.2011                          ||
+ * \\==============================================//
+ */
+// start vs code build task ctrl+shift+b
 const oauth2Endpoint = "https://accounts.google.com/o/oauth2/v2/auth";
 const tokenInfoEndpoint = "https://www.googleapis.com/oauth2/v3/tokeninfo";
 const listFilesEndpoint = "https://www.googleapis.com/drive/v3/files";
@@ -6,7 +13,7 @@ const revokeTokenEndpoint = "https://accounts.google.com/o/oauth2/revoke";
 const clientId = "521276716409-ib243g6vit5fqh5on5fgvsg27r2qsabd.apps.googleusercontent.com";
 const clientSecret = "";
 var accessToken;
-function signIn() {
+function generateSignInLink() {
     let params = {
         scope: "email profile",
         // state: "",
@@ -60,7 +67,7 @@ function listFiles() {
     };
     req.send(null);
 }
-function getFilesPermission() {
+function generateGetFilesPermissionLink() {
     let params = {
         scope: "https://www.googleapis.com/auth/drive.metadata.readonly",
         // state:"",
@@ -76,7 +83,7 @@ function getFilesPermission() {
     getFilesPermissionLink.innerHTML = getFilesPermissionUri;
     // window.location.href = getFilesPermissionUri;
 }
-function revokeToken() {
+function generateRevokeTokenLink() {
     if (!accessToken) {
         return;
     }
