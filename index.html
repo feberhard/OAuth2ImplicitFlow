@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>NETProject</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Bootstrap: Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body class="container-fluid">
+    <h1>OAuth 2.0 Implicit Flow</h1>
+
+    <h2>1. Acquire token</h2>
+    <button id="signin-button" class="btn btn-primary" onclick="signIn()">Generate Sign In Link</button>
+    <a id="signin-link"></a>
+    <pre id="signin-response"></pre>
+
+    <h2>2. Validate token</h2>
+    <button id="validate-button" class="btn btn-primary" onclick="validateToken()">Validate Token</button>
+    <a id="validate-link"></a>
+    <pre id="validate-response"></pre>
+
+    <h2>3/5. List files in Google Drive root directory</h2>
+    <button id="listfiles-button" class="btn btn-primary" onclick="listFiles()">List Files</button>
+    <a id="listfiles-link"></a>
+    <pre id="listfiles-response"></pre>
+
+    <h2>4. Get files permission</h2>
+    <button id="getfilespermission-button" class="btn btn-primary" onclick="getFilesPermission()">Generate Get Files Permission Link</button>
+    <a id="getfilespermission-link"></a>
+
+    <h2>6. Revoke token</h2>
+    <button id="revoketoken-button" class="btn btn-primary" onclick="revokeToken()">Generate Revoke Token Link</button>
+    <a id="revoketoken-link" target="_blank" rel="noopener noreferrer"></a>
+
+    <script src="util.js"></script>
+    <script src="client.js"></script>
+</body>
+
+</html>
